@@ -1,1 +1,9 @@
-config*
+# Python
+__pycache__/
+*.pyc
+
+# Other
+*.pyo
+*.egg-info/
+dist/
+build/

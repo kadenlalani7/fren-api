@@ -1,9 +1,7 @@
 import requests
 from datetime import datetime
-# import config as config
-from flask import Flask, jsonify, request
-
-app = Flask(__name__)
+from flask import jsonify
+from config import Config
 
 
 def print_event_info(event):
@@ -34,7 +32,7 @@ def get_user_token_holdings(address):
 
 def get_eth_amounts_for_user(user_address):
     url = f"https://prod-api.kosetto.com/users/{user_address}/token/trade-activity"
-    response = requests.get(url, headers=config.TRADING_ACTIVITY)
+    response = requests.get(url, headers=Config.TRADING_ACTIVITY)
     
     if response.status_code != 200:
         print(f"Error fetching data for {user_address}. Status code: {response.status_code}")
@@ -122,17 +120,6 @@ def create_scatter_plots(data):
         )
     return plots
 
-# Fetch the data
-# all_users_eth_data = fetch_all_users_eth_data("0x1Ec8b3B4CD301eC819Ed9925AfdFbae6B12e3F9b")
-
-# Initialize Dash App
-# app = dash.Dash(__name__)
-# app.layout = html.Div(create_scatter_plots(all_users_eth_data))
-
-# if __name__ == '__main__':
-#     app.run_server(debug=True)
-
-@app.route('/get_purchase_data/<address>', methods=['GET'])
 def get_purchase_data(address):
     try:
         all_users_eth_data = fetch_all_users_eth_data(address)
@@ -140,7 +127,5 @@ def get_purchase_data(address):
     except Exception as e:
         return jsonify({"error": str(e)})
 
-if __name__ == '__main__':
-    app.run(debug=True)
 
     
