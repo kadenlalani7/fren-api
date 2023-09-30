@@ -1,6 +1,6 @@
 import requests
 from datetime import datetime
-import config
+# import config as config
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
