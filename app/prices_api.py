@@ -1,9 +1,6 @@
 import requests
-import dash
-from dash import dcc, html
-import plotly.graph_objs as go
 from datetime import datetime
-import app.config as config
+import config as config
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
