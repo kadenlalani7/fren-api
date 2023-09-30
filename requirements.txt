@@ -19,7 +19,7 @@ browsermob-proxy==0.8.0
 bs4==0.0.1
 bump2version==1.0.1
 bumpversion==0.6.0
-cchardet
+cchardet>=2.1.8
 certifi==2022.9.24
 cffi==1.15.1
 charset-normalizer==2.1.1
