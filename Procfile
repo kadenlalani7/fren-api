@@ -1,1 +1,1 @@
-web: python app/prices_api.py
+web: python app/app.py
