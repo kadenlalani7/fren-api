@@ -14,3 +14,6 @@ else:
 @app.route('/get_purchase_data/<address>', methods=['GET'])
 def get_purchase_data_route(address):
     return get_purchase_data(address)
+
+if __name__ == '__main__':
+    app.run(debug=True)
