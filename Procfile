@@ -1,1 +1,1 @@
-web: uwsgi --http :9347 --wsgi-file app.py
+uwsgi --http :9347 --wsgi-file fren-api/app/app.py --callable app
