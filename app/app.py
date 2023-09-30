@@ -2,7 +2,7 @@ from flask import Flask
 from prices_api import get_purchase_data
 from config import DevelopmentConfig, ProductionConfig
 import os
-
+print(__name__)
 app = Flask(__name__)
 
 # Configure the app based on the environment
